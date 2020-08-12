@@ -1,0 +1,3 @@
+[submodule "config/emacs-config/vscode-eslint"]
+	path = config/emacs-config/vscode-eslint
+	url = git@github.com:microsoft/vscode-eslint.git

@@ -1,0 +1,15 @@
+auto-save
+auto-save-list
+cider-history
+custom.el
+projectile-bookmarks.eld
+recentf
+transient
+.cache
+.lsp-session-v1
+.dap-breakpoints
+.extension
+flycheck_init.el
+projects
+elpa
+.env

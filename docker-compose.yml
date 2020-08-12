@@ -1,0 +1,20 @@
+version: '3'
+services:
+  rek:
+    build: .
+    working_dir: /home/node/app
+    env_file: config/.env
+    environment:
+      - DISPLAY=host.docker.internal:0
+    security_opt:
+      - seccomp:./docker-seccomp.json
+    volumes:
+      - .:/home/node/app
+      - /home/node/app/node_modules
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+    ports:
+      - 8443:8443
+    command: '/bin/bash'
+    stdin_open: true
+    tty: true
+    user: node
