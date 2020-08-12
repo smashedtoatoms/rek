@@ -27,7 +27,7 @@ RUN mkdir -p /home/node/.emacs.d/vscode-eslint && chown -R node:node /home/node/
 COPY ./config/emacs-config/init.el /home/node/.emacs.d/
 COPY config/emacs-config/vscode-eslint/ /home/node/.emacs.d/
 COPY config/tmux.conf /home/node/.tmux.conf
-RUN chown -R node:node /home/node/.emacs.d/*
+RUN chown -R node:node /home/node/.emacs.d/* && chown -R node:node /home/node/.tmux.conf
 USER node
 RUN cd /home/node/.emacs.d/vscode-eslint && npm install && npm run compile:server
 USER root
