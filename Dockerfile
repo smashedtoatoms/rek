@@ -43,7 +43,8 @@ RUN ros && ros install qlot && ros install sly && emacs --daemon
 USER root
 
 # Install tools that I want
-RUN DEBIAN_FRONTEND=noninteractive apt-get -yyq install aircrack-ng burpsuite hydra john maltego nmap zaproxy sqlmap wireshark chromium python3-pip && \
+RUN DEBIAN_FRONTEND=noninteractive apt-get -yyq install aircrack-ng burpsuite hydra john maltego nmap zaproxy sqlmap wireshark chromium python3-pip \
+  telnet && \
   cd node_modules && \
   curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
   chmod 755 msfinstall && \
